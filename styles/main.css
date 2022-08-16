@@ -83,7 +83,7 @@ body {
   font-family: var(--ff-body);
   font-weight: var(--fw-regular);
   display: grid;
-  grid-template-rows: auto max-content;
+  grid-template-rows: auto max-content max-content;
 }
 
 main {
@@ -105,112 +105,6 @@ main {
 
 .flow * + * {
   margin-top: var(--flow-spacer, 1em);
-}
-
-.btn {
-  --clr-btn-text: var(--clr-grey-1000);
-  --clr-btn-hover: var(--clr-grey-500);
-  --padding: var(--size-300) var(--size-600);
-
-  display: inline-flex;
-  padding: var(--padding);
-  color: var(--clr-btn-text);
-  border-radius: 100vmax;
-  text-decoration: none;
-}
-
-.btn:where(:hover, :focus, :focus-visible) {
-  color: var(--clr-btn-hover);
-}
-
-.btn-section {
-  --clr-btn-text: var(--clr-grey-900);
-  --clr-btn-bg: var(--clr-grey-100);
-  --clr-btn-border: var(--clr-grey-100);
-
-  background-color: var(--clr-btn-bg);
-  border: thin solid var(--clr-btn-border);
-}
-
-.btn-section:where(:hover, :focus, :focus-visible) {
-  --clr-btn-text: var(--clr-grey-100);
-  --clr-btn-hover: var(--clr-grey-100);
-  --clr-btn-bg: transparent;
-}
-
-/** Content - Content Grid **/
-.section-grid {
-  --cell-width: 19.375em;
-  --cell-height: 31.25em;
-  --cell-num: 3;
-
-  display: grid;
-  max-width: var(--cell-width);
-  min-height: calc(var(--cell-height) * var(--cell-num));
-  grid-template-columns: 100%;
-  grid-template-rows: repeat(3, 1fr);
-  border-radius: var(--size-200);
-  overflow: hidden;
-}
-
-@media (min-width: 59.5em) {
-  .section-grid {
-    max-width: calc(var(--cell-width) * var(--cell-num));
-    min-height: var(--cell-height);
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 100%;
-  }
-}
-
-.section-cell {
-  --clr-heading: var(--clr-grey-100);
-  --clr-body: var(--clr-grey-300);
-  --clr-bg: var(--clr-grey-900);
-
-  padding: var(--size-600);
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: repeat(3, max-content) auto;
-  gap: var(--size-400);
-  background-color: var(--clr-bg);
-  height: 100%;
-}
-
-.section-cell .section-heading {
-  color: var(--clr-heading);
-}
-
-.section-cell .section-content {
-  color: var(--clr-body);
-}
-
-.section-cell .section-button-container {
-  align-self: end;
-}
-
-.section-cell .btn-section {
-  --clr-btn-text: var(--clr-bg);
-}
-
-[data-cell="sedans"].section-cell {
-  --clr-heading: var(--clr-orange-100);
-  --clr-body: var(--clr-orange-200);
-  --clr-bg: var(--clr-orange-400);
-  --clr-btn: var(--clr-orange-400);
-}
-
-[data-cell="suvs"].section-cell {
-  --clr-heading: var(--clr-teal-100);
-  --clr-body: var(--clr-teal-200);
-  --clr-bg: var(--clr-teal-800);
-  --clr-btn: var(--clr-teal-800);
-}
-
-[data-cell="luxury"].section-cell {
-  --clr-heading: var(--clr-cyan-100);
-  --clr-body: var(--clr-cyan-200);
-  --clr-bg: var(--clr-cyan-900);
-  --clr-btn: var(--clr-cyan-900);
 }
 
 /** Content - End **/
