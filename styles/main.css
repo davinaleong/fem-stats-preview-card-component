@@ -2,7 +2,7 @@
     - Root
     - Content
       - Content - General Styling
-      - Content - Content Grid
+      - Content - Card
     - Utility
       - Utility - Colours
       - Utility - Background Colours
@@ -88,7 +88,7 @@ body {
 
 main {
   display: grid;
-  place-content: center;
+  justify-items: center;
 }
 
 .swatches {
@@ -105,6 +105,40 @@ main {
 
 .flow * + * {
   margin-top: var(--flow-spacer, 1em);
+}
+
+.even-columns {
+  display: grid;
+  gap: var(--column-spacing);
+}
+
+@media (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+/** Content - Card **/
+.card {
+  --width: 88vw;
+
+  width: var(--width);
+  border-radius: var(--size-200);
+  overflow: hidden;
+}
+
+.card-header {
+  position: relative;
+  isolation: isolate;
+}
+
+.card-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: hsla(277, 53%, 59%, 0.6);
+  z-index: 1;
 }
 
 /** Content - End **/
