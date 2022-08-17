@@ -4,7 +4,7 @@ Another simple challenge from Frontend Mentor.
 
 The challenge can be found [here](https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62).
 
-Demo page coming soon!
+Demo page can be found [here](https://davinaleong.github.io/fem-stats-preview-card-component/)!
 
 ## Getting Started
 
