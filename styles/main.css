@@ -18,7 +18,7 @@
 
 /** Root **/
 :root {
-  --clr-primary-800: hsl(244, 38%, 16%);
+  --clr-primary-800: hsl(244, 38%, 20%);
   --clr-primary-900: hsl(233, 47%, 7%);
 
   --clr-accent-400: hsl(277, 53%, 59%);
@@ -88,6 +88,7 @@ body {
 
 main {
   display: grid;
+  align-items: center;
   justify-items: center;
 }
 
@@ -108,24 +109,67 @@ main {
 }
 
 .even-columns {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: var(--column-spacing);
 }
 
-@media (min-width: 50em) {
+@media (min-width: 71.375em) {
   .even-columns {
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
 /** Content - Card **/
 .card {
-  --width: 88vw;
+  --width: 20.625em;
+  --height: 28.125em;
 
   width: var(--width);
+  min-height: var(--height);
   border-radius: var(--size-200);
   overflow: hidden;
+  display: grid;
+}
+
+.card-header img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  --padding: var(--size-400);
+  padding: var(--padding);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 71.375em) {
+  .card {
+    --width: 69.375em;
+
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-header {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .card-header img {
+    width: auto;
+    height: 100%;
+  }
+
+  .card-content {
+    --padding: var(--size-600);
+
+    grid-row: 1;
+    grid-column: 1;
+  }
 }
 
 /** Content - End **/
